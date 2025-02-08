@@ -7,7 +7,7 @@ const App = () => {
   const winner = calculateWinner(board);
 
   const handleClick = (index) => {
-    if (board[index] || winner) return; // Prevent overwriting cells or playing after winning
+    if (board[index] || winner) return;
     const newBoard = [...board];
     newBoard[index] = isXNext ? 'X' : 'O';
     setBoard(newBoard);

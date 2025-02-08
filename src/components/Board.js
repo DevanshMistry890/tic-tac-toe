@@ -1,6 +1,5 @@
 import React from 'react';
 import Cell from './Cell';
-import './Board.css'; // Optional: Add specific styles for the board
 
 const Board = ({ board, onClick }) => {
   return (

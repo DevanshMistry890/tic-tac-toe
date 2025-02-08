@@ -1,56 +1,94 @@
+/* Devansh Mistry 9000819 CSS */
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #44476A;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
-  background-color: #f0f0f0;
+  text-align: center;
+  padding: 5%;
+  background-color: #e6e7ee;
+  border-color: #D1D9E6;
+  box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
 }
+
+.app {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  row-gap: 2vh;
+}
+
 
 .board {
   display: grid;
   grid-template-columns: repeat(3, 100px);
   grid-template-rows: repeat(3, 100px);
-  gap: 5px;
+  gap: 5%;
+  margin-bottom: 15%;
 }
 
 .cell {
-  width: 100px;
-  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: inherit;
   font-size: 2rem;
-  font-weight: bold;
-  background-color: #fff;
-  border: 2px solid #ccc;
+  font-weight: 400;
+  color: #44476A;
+  background-color: #e6e7ee;
+  border-color: #e6e7ee;
+  box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
   cursor: pointer;
-  transition: background-color 0.3s;
+  border-radius: 0.55rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .cell:hover {
-  background-color: #f9f9f9;
+  box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #FFFFFF !important;
 }
 
 .status {
+  font-family: inherit;
   margin-bottom: 20px;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
 .reset-button {
-  margin-top: 20px;
-  padding: 10px 20px;
+  display: inline-block;
+  font-weight: 400;
+  color: #31344b;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #e6e7ee;
+  border: 0.0625rem solid transparent;
+  border-color: #e6e7ee !important;
+  padding: 0.55rem 0.95rem;
   font-size: 1rem;
-  cursor: pointer;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+  line-height: 1.5;
+  border-radius: 0.55rem;
+  box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .reset-button:hover {
-  background-color: #0056b3;
+  color: #31344b;
+  background-color: transparent;
+  border-color: #c8cad9;
+  box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #FFFFFF;
+  cursor: pointer;
+
 }
