@@ -13,19 +13,25 @@ const App = () => {
 
   // handle click
   const handleClick = (index) => {
-     // filled or winner, do nothing
     if (board[index] || winner) return;
+
+    // Create a new board with the player's move
     const newBoard = [...board];
     newBoard[index] = isXNext ? 'X' : 'O';
     setBoard(newBoard);
     setIsXNext(!isXNext);
 
-    // AI turn
-    if (isAIMode && !winner && !isXNext) {
+    // If in AI mode; make the AI move
+    if (isAIMode) {
+      setTimeout(() => { 
       const aiMove = getBestMove(newBoard);
-      newBoard[aiMove] = 'O';
-      setBoard(newBoard);
-      setIsXNext(true);
+      if (aiMove !== null) {
+        const updatedBoard = [...newBoard];
+        updatedBoard[aiMove] = 'O';
+        setBoard(updatedBoard);
+        setIsXNext(true);
+      }
+    }, 500); // Delay for AI's turn
     }
   };
 
@@ -54,15 +60,17 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1>Tic-Tac-Toe</h1>
+      <h1>Tic Tac Toe</h1>
       <div className="status">{getStatus()}</div>
       <Board board={board} onClick={handleClick} />
-      <button className="reset-button" onClick={resetGame}>
-        <span className="fas fa-sync"></span>  Reset Game
-      </button>
-      <button className="ai-mode-button" onClick={toggleAIMode}>
-        {isAIMode ? 'Switch to 2-Player' : 'Play Against AI'}
-      </button>
+      <div className='btn-bar'>
+        <button className="reset-button" onClick={resetGame}>
+          <span className="fas fa-sync mr-icon"></span>Reset Game
+        </button>
+        <button className="reset-button" onClick={toggleAIMode}>
+          {isAIMode ? 'Switch to 2 Player' : <><i className="fas fa-robot mr-icon"></i>Play Against AI</>}
+        </button>
+      </div>
     </div>
   );
 };
