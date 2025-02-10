@@ -1,2 +1,2 @@
 # tic-tac-toe
-tic tac tor in react
+tic tac toe in react
