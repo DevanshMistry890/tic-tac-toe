@@ -2,7 +2,9 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap");
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -11,10 +13,6 @@ body {
   font-weight: 300;
   line-height: 1.5;
   color: #44476A;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   text-align: center;
   padding: 5%;
   background-color: #e6e7ee;
@@ -22,22 +20,28 @@ body {
   box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
 }
 
-.app {
-  display: flex;
+.root {
   width: 100%;
-  flex-direction: column;
+  height: max-content;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(4, auto);
   justify-content: center;
-  align-items: baseline;
+  align-content: center; 
   row-gap: 2vh;
 }
 
-
 .board {
-  display: grid;
+  width: 40vw;
+  display: inline-grid;
   grid-template-columns: repeat(3, 100px);
   grid-template-rows: repeat(3, 100px);
-  gap: 5%;
-  margin-bottom: 15%;
+  justify-content: center;
+  align-content: center;
+  gap: 2vh;
 }
 
 .cell {
@@ -76,12 +80,16 @@ body {
   background-color: #e6e7ee;
   border: 0.0625rem solid transparent;
   border-color: #e6e7ee !important;
+  margin-top: 5vh;
   padding: 0.55rem 0.95rem;
   font-size: 1rem;
   line-height: 1.5;
+  max-width: fit-content;
   border-radius: 0.55rem;
   box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  align-self: center;
+  justify-self: center;
 }
 
 .reset-button:hover {
@@ -90,5 +98,4 @@ body {
   border-color: #c8cad9;
   box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #FFFFFF;
   cursor: pointer;
-
 }

@@ -25,7 +25,7 @@ const App = () => {
     } else if (board.every((cell) => cell !== null)) {
       return 'Draw!';
     } else {
-      return `Next Player: ${isXNext ? 'X' : 'O'}`;
+      return `Turn of Player: ${isXNext ? 'X' : 'O'}`;
     }
   };
 
@@ -35,7 +35,7 @@ const App = () => {
       <div className="status">{getStatus()}</div>
       <Board board={board} onClick={handleClick} />
       <button className="reset-button" onClick={resetGame}>
-        Reset Game
+        <span className="fas fa-sync"></span>  Reset Game
       </button>
     </div>
   );
