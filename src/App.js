@@ -31,7 +31,7 @@ const App = () => {
         setBoard(updatedBoard);
         setIsXNext(true);
       }
-    }, 500); // Delay for AI's turn
+    }, 300); // Delay for AI's turn
     }
   };
 
